@@ -21,7 +21,7 @@ const Navbar = () => {
       </Link>
       <Link to="/myColleges">
         <li className="ml-8 text-xl font-medium hover:text-orange-600 hover:underline">
-          My Colleges
+          My College
         </li>
       </Link>
     </>

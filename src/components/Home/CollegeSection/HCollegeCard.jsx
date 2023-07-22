@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HCollegeCard = ({ college }) => {
   const {
+    _id,
     image,
     college_name,
     admission_dates,
@@ -29,7 +31,9 @@ const HCollegeCard = ({ college }) => {
           Events :
           {events.map((event) => (
             <>
-              <li className="font-normal list-none ms-6 text-slate-500">
+              <li
+                className="font-normal list-none ms-6 text-slate-500"
+              >
                 {event}
               </li>
             </>
@@ -57,9 +61,11 @@ const HCollegeCard = ({ college }) => {
         </p>
       </div>
       <div className="text-right">
-        <button className="text-lg font-semibold font-mono px-6 py-2 bg-orange-400 text-slate-100 hover:bg-orange-300 hover:text-orange-700 rounded-lg">
-          Visit Here
-        </button>
+        <Link to={`/colleges/${_id}`}>
+          <button className="text-lg font-semibold font-mono px-6 py-2 bg-orange-400 text-slate-100 hover:bg-orange-300 hover:text-orange-700 rounded-lg">
+            Visit Here
+          </button>
+        </Link>
       </div>
     </div>
   );

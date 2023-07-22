@@ -1,16 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const CollegeCard = ({ college }) => {
   const {
+    _id,
     image,
     college_name,
     admission_dates,
-    events,
+    rating,
     research_history,
-    sports,
   } = college;
   return (
-    <div className=" bg-orange-50 p-2">
+    <div className=" bg-orange-50 p-2 lg:max-w-screen-xl md:max-w-screen-md sm:max-w-screen-sm mx-auto">
       <figure>
         <img
           className="w-96 h-64 p-4 bg-orange-100"
@@ -25,41 +26,17 @@ const CollegeCard = ({ college }) => {
         <p className="text-lg font-medium">
           Admission Date : {admission_dates}
         </p>
+        <p className="text-lg font-semibold">Rating : {rating}</p>
         <p className="text-lg font-semibold">
-          Events :
-          {events.map((event) => (
-            <>
-              <li className="font-normal list-none ms-6 text-slate-500">
-                {event}
-              </li>
-            </>
-          ))}
-        </p>
-        <p className="text-lg font-semibold">
-          Research History :
-          {research_history.map((item) => (
-            <>
-              <li className="font-normal list-none ms-6 text-slate-500">
-                {item}
-              </li>
-            </>
-          ))}
-        </p>
-        <p className="text-lg font-semibold">
-          Sports :
-          {sports.map((sport) => (
-            <>
-              <li className="font-normal list-none ms-6 text-slate-500">
-                {sport}
-              </li>
-            </>
-          ))}
+          Number Of Research :{research_history.length}
         </p>
       </div>
       <div className="text-right">
-        <button className="text-lg font-semibold font-mono px-6 py-2 bg-orange-400 text-slate-100 hover:bg-orange-300 hover:text-orange-700 rounded-lg">
-          Visit Here
-        </button>
+        <Link to={`/colleges/${_id}`}>
+          <button className="text-lg font-semibold font-mono px-6 py-2 bg-orange-400 text-slate-100 hover:bg-orange-300 hover:text-orange-700 rounded-lg">
+            Visit Here
+          </button>
+        </Link>
       </div>
     </div>
   );

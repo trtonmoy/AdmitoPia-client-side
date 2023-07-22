@@ -74,7 +74,7 @@ const ResearchSection = () => {
               <div className="p-12 md:flex md:justify-between md:items-center gap-10">
                 <figure>
                   <img
-                    src="https://img.freepik.com/premium-photo/exploring-artificial-intelligence-ethical-implications-generative-ai_100209-4189.jpg"
+                    src="https://www.power-technology.com/wp-content/uploads/sites/21/2020/06/Wind-Tweets-May.jpg"
                     alt="A brief introduction to AI"
                   />
                   <figcaption>
@@ -118,7 +118,7 @@ const ResearchSection = () => {
               <div className="p-12 md:flex md:justify-between md:items-center gap-10">
                 <figure>
                   <img
-                    src="https://img.freepik.com/premium-photo/exploring-artificial-intelligence-ethical-implications-generative-ai_100209-4189.jpg"
+                    src="https://bepartofresearch.nihr.ac.uk/dA/732d5bab53/Health%20breakthroughs.jpg"
                     alt="A brief introduction to AI"
                   />
                   <figcaption>
@@ -162,7 +162,7 @@ const ResearchSection = () => {
               <div className="p-12 md:flex md:justify-between md:items-center gap-10">
                 <figure>
                   <img
-                    src="https://img.freepik.com/premium-photo/exploring-artificial-intelligence-ethical-implications-generative-ai_100209-4189.jpg"
+                    src="https://cdn.tatlerasia.com/tatlerasia/i/2022/07/19150158-taylors_cover_1500x1000.jpeg"
                     alt="A brief introduction to AI"
                   />
                   <figcaption>
