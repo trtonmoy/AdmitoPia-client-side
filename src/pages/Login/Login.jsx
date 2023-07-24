@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../provider/AuthProvider";
 
 const Login = () => {
-  const { login } = useContext(AuthContext);
+  const { login, googleSignIn, setUser } = useContext(AuthContext);
 
   const defaultOptions = {
     loop: true,
@@ -35,6 +35,16 @@ const Login = () => {
         });
       })
       .catch((err) => {
+        console.error(err);
+      });
+  };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((res) => {
+        setUser(res.user);
+      })
+      .then((err) => {
         console.error(err);
       });
   };
@@ -90,12 +100,19 @@ const Login = () => {
             >
               Log In
             </button>
+            <button
+              onClick={handleGoogleSignIn}
+              type="submit"
+              className="w-full bg-orange-400 text-white my-2 p-3 rounded-lg font-bold hover:bg-teal-600 transition duration-200"
+            >
+              Log In With Google
+            </button>
           </form>
           <p className="pt-6 ps-4 text-teal-700 font-sans font-medium ">
-            New to the Site?{" "}
+            New to the Site?
             <Link to="/register">
               <span className="mx-8 text-orange-700 underline">Sign Up</span>
-            </Link>{" "}
+            </Link>
           </p>
         </div>
       </div>

@@ -17,12 +17,14 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Homepage></Homepage>,
-        loader: () => fetch("http://localhost:5000/colleges"),
+        loader: () =>
+          fetch("https://admitopia-server-side.vercel.app/colleges"),
       },
       {
         path: "/colleges",
         element: <Colleges></Colleges>,
-        loader: () => fetch("http://localhost:5000/colleges"),
+        loader: () =>
+          fetch("https://admitopia-server-side.vercel.app/colleges"),
       },
       {
         path: "/myCollege",
@@ -31,19 +33,24 @@ export const router = createBrowserRouter([
       {
         path: "/admission",
         element: <Admission></Admission>,
-        loader: () => fetch("http://localhost:5000/colleges"),
+        loader: () =>
+          fetch("https://admitopia-server-side.vercel.app/colleges"),
       },
       {
         path: "/admission/enroll/:id",
         element: <Enroll></Enroll>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/admission/enroll/${params.id}`),
+          fetch(
+            `https://admitopia-server-side.vercel.app/admission/enroll/${params.id}`
+          ),
       },
       {
         path: "/colleges/:id",
         element: <Details></Details>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/colleges/${params.id}`),
+          fetch(
+            `https://admitopia-server-side.vercel.app/colleges/${params.id}`
+          ),
       },
       {
         path: "/login",

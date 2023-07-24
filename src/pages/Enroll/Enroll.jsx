@@ -18,6 +18,7 @@ const Enroll = () => {
     const address = form.address.value;
     const info = {
       name,
+      college_name,
       email,
       subject,
       phone,
@@ -29,7 +30,7 @@ const Enroll = () => {
     };
     // console.log(info);
 
-    fetch("http://localhost:5000/admission", {
+    fetch("https://admitopia-server-side.vercel.app/admission", {
       method: "POST",
       headers: {
         "content-type": "application/json",
