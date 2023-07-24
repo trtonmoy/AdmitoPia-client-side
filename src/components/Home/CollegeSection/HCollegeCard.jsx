@@ -29,9 +29,10 @@ const HCollegeCard = ({ college }) => {
         </p>
         <p className="text-lg font-semibold">
           Events :
-          {events.map((event) => (
+          {events.map((event, idx) => (
             <>
               <li
+                key={idx}
                 className="font-normal list-none ms-6 text-slate-500"
               >
                 {event}

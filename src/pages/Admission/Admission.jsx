@@ -26,7 +26,7 @@ const Admission = () => {
                 <p> {college.rating} </p>
               </div>
               <div>
-                <Link>
+                <Link to={`enroll/${college._id}`}>
                   {" "}
                   <button className="text-lg font-semibold font-mono text-teal-800 bg-teal-300 px-12 py-3 hover:text-white hover:bg-teal-700">
                     Enroll

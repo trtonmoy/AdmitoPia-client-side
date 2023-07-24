@@ -15,10 +15,10 @@ const SearchBar = () => {
 
       {/* Content inside the div */}
       <div className="text-center sm:my-4 md:mb-8 relative z-10">
-        <div className="pt-8">
+        <div className="pt-20">
           <input
             type="text"
-            className="border rounded-full border-orange-600 py-4 sm:w-[50%] md:[80%]"
+            className="border px-8 rounded-full border-orange-600 py-4 sm:w-[50%] md:[80%]"
             id=""
           />
           <button className="px-6 py-4 ml-6 sm:text-sm md:text-xl bg-orange-400 text-white font-semibold tracking-wide rounded-full ">

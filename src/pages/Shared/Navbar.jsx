@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+
   const menuList = (
     <>
       <Link to="/">
@@ -19,11 +30,27 @@ const Navbar = () => {
           Admission
         </li>
       </Link>
-      <Link to="/myColleges">
+      <Link to="/myCollege">
         <li className="ml-8 text-xl font-medium hover:text-orange-600 hover:underline">
           My College
         </li>
       </Link>
+      {user ? (
+        <Link to="/register">
+          <li
+            onClick={handleLogOut}
+            className="ml-8 text-xl font-medium hover:text-orange-600 hover:underline"
+          >
+            Log Out
+          </li>
+        </Link>
+      ) : (
+        <Link to="/register">
+          <li className="ml-8 text-xl font-medium hover:text-orange-600 hover:underline">
+            Sign Up
+          </li>
+        </Link>
+      )}
     </>
   );
   return (
@@ -56,13 +83,19 @@ const Navbar = () => {
           </div>
           <Link to="/" className="text-2xl font-semibold text-orange-600">
             {" "}
-            Admitopia{" "}
+            AdmitoPia{" "}
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{menuList}</ul>
         </div>
-        <div className="navbar-end">profile</div>
+        <div className="navbar-end">
+          {" "}
+          <span className="mr-4 text-orange-600 font-serif font-semibold text-xl">
+            {" "}
+            {user?.displayName}{" "}
+          </span>{" "}
+        </div>
       </div>
     </nav>
   );
